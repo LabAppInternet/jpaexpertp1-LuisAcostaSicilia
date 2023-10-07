@@ -9,7 +9,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "userlab")
+@Table(name = "userlab",
+        uniqueConstraints = @UniqueConstraint(name = "UK_email", columnNames = {"email"}))
 public class User implements Serializable {
     @Id
     @NotBlank
