@@ -1,11 +1,19 @@
 package cat.tecnocampus.fgcstations.domain;
 
 import java.util.List;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "favorite_journey")
 public class FavoriteJourney {
 
+    @Id
+    @Column(name = "favorite_journey_id")
     private String id;
+    @OneToMany(mappedBy = "favoriteJourney", cascade = CascadeType.ALL)
     private List<DayTimeStart> startList;
+    @ManyToOne
+    @JoinColumn(name = "journey_id", nullable = false)
     private Journey journey;
 
 

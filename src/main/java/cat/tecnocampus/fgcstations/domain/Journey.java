@@ -2,12 +2,22 @@ package cat.tecnocampus.fgcstations.domain;
 
 
 import cat.tecnocampus.fgcstations.domain.exceptions.SameOriginDestinationException;
+import jakarta.persistence.*;
 
+
+@Entity
+@Table(name = "journey")
 public class Journey {
 
+    @Id
+    @Column(name = "journey_id")
     private String id;
 
+    @ManyToOne
+    @JoinColumn(name = "origin", referencedColumnName = "nom", nullable = false)
     private Station origin;
+    @ManyToOne
+    @JoinColumn(name = "destination", referencedColumnName = "nom", nullable = false)
     private Station destination;
 
     public Journey(Station origin, Station destination, String id) {
@@ -18,6 +28,9 @@ public class Journey {
         this.origin = origin;
         this.destination = destination;
         this.id = id;
+    }
+
+    public Journey() {
     }
 
     public String getId() {

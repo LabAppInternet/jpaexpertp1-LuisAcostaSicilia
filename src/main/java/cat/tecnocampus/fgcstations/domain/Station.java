@@ -1,10 +1,18 @@
 package cat.tecnocampus.fgcstations.domain;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "station")
 public class Station {
 
+    @Id
+    @Column(name = "nom")
     private String nom;
 
+    @Column(name = "nom")
     private String longitud;
+    @Column(name = "nom")
     private String latitud;
 
     public Station() {

@@ -1,10 +1,20 @@
 package cat.tecnocampus.fgcstations.domain;
 
+import jakarta.persistence.*;
+@Entity
+@Table(name = "day_time_start")
 public class DayTimeStart {
 
+    @Id
+    @Column(name = "daytime_id")
     private String id;
+    @Column(name = "timeStart")
     private String timeStart;
+    @Column(name = "day_of_week")
     private String dayOfWeek;
+    @ManyToOne
+    @JoinColumn(name = "favorite_journey_id", nullable = false)
+    private FavoriteJourney favoriteJourney;
 
     public DayTimeStart() {}
 

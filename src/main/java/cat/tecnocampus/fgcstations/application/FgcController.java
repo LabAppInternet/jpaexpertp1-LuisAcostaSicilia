@@ -5,8 +5,8 @@ import cat.tecnocampus.fgcstations.application.DTOs.DayTimeStartDTO;
 import cat.tecnocampus.fgcstations.application.DTOs.FavoriteJourneyDTO;
 import cat.tecnocampus.fgcstations.application.DTOs.FriendsDTO;
 import cat.tecnocampus.fgcstations.application.exception.UserDoesNotExistsException;
-import cat.tecnocampus.fgcstations.application.persistence.*;
 import cat.tecnocampus.fgcstations.domain.*;
+import cat.tecnocampus.fgcstations.persistence.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,15 +16,15 @@ import java.util.stream.Collectors;
 
 @Service
 public class FgcController {
-    private StationDAO stationDAO;
-    private UserDAO userDAO;
-    private FavoriteJourneyDAO favoriteJourneyDAO;
-    private JourneyDAO journeyDAO;
-    private FriendDAO friendDAO;
+    private StationRepository stationDAO;
+    private UserRepository userDAO;
+    private FavoriteJourneyRepository favoriteJourneyDAO;
+    private JourneyRepository journeyDAO;
+    private FriendRepository friendDAO;
 
-    public FgcController(StationDAO stationDAO, UserDAO userDAO,
-                         FavoriteJourneyDAO favoriteJourneyDAO, JourneyDAO journeyDAO,
-                         FriendDAO friendDAO) {
+    public FgcController(StationRepository stationDAO, UserRepository userDAO,
+                         FavoriteJourneyRepository favoriteJourneyDAO, JourneyRepository journeyDAO,
+                         FriendRepository friendDAO) {
         this.stationDAO = stationDAO;
         this.userDAO = userDAO;
         this.favoriteJourneyDAO = favoriteJourneyDAO;
