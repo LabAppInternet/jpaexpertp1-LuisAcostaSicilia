@@ -10,9 +10,9 @@ public class Station {
     @Column(name = "nom")
     private String nom;
 
-    @Column(name = "nom")
+    @Column(name = "longitud")
     private String longitud;
-    @Column(name = "nom")
+    @Column(name = "latitud")
     private String latitud;
 
     public Station() {
